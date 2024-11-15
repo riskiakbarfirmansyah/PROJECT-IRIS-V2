@@ -13,11 +13,10 @@ class Matakuliah extends Model
 
     protected $fillable = [
         'kodemk',
-        'nama',
-        'program_studi',
-        'plotsemester',
+        'nama_mk',
         'sks',
-        'sifat',
-        'jumlah_kelas',
+        'semester',
+        'sks',
+        'sifat'
     ];
 }

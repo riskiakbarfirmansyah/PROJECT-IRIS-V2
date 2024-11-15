@@ -11,12 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('khs', function (Blueprint $table) {
-            $table->id();
-            $table->string('nim');
-            $table->string('kode');
-            $table->char('nilai');
-            $table->timestamps();
+        Schema::create('k_h_s', function (Blueprint $table) {
+            $table->integer('id_khs') -> primary();
+            $table->char('nama');
+            $table->char('program_studi');
+            $table->integer('semester');
+            $table->string('kode_mk',10);
+            $table->string('nama_mk');
+            $table->integer('sks');
+            $table->integer('nilai_angka')->nullable();
+            $table->char('nilai_huruf', 2)->nullable();
         });
     }
 
@@ -25,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('khs');
+        Schema::dropIfExists('k_h_s');
     }
 };

@@ -5,23 +5,34 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Irs extends Model
+class irs extends Model
 {
     use HasFactory;
-
     protected $table = 'irs';
+    protected $primaryKey = 'id_irs';
 
     protected $fillable = [
-        'kode',
-        'mata_kuliah',
-        'kelas',
+        'id_irs',
+        'mahasiswa_id',
+        'nama',
+        'program_studi',
+        'semester',
+        'tahun_akademik',
+        'kode_matkul',
+        'nama_matkul',
         'sks',
-        'ruang',
         'status',
-        'nama_dosen',
-        'hari_jam',
-        'semester'
+        'tanggal_pengajuan',
+        'tanggal_persetujuan'
     ];
 
-    public $timestamps = false;
+    public function mahasiswa()
+    {
+        return $this->belongsTo(Mahasiswa::class, 'mahasiswa_id', 'nim');
+    }
+
+    public function Khs()
+    {
+        return $this->hasMany(Khs::class,'id_irs');
+    }
 }

@@ -11,9 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('mahasiswa', function (Blueprint $table) {
-            $table->id();
-            $table->string('nim')->unique();
+        Schema::create('mahasiswas', function (Blueprint $table) {
+            $table->string('nim', 14)->primary();
             $table->string('nama');
             $table->string('email');
             $table->string('no_telp')->nullable();
@@ -25,8 +24,11 @@ return new class extends Migration
             $table->integer('semester_berjalan');
             $table->float('ipk');
             $table->text('alamat')->nullable();
+            $table->string('dosen_wali');
             $table->string('status')->nullable();
-            $table->timestamps();
+
+            $table->foreign('dosen_wali')->references('nip')->on('dosens')
+          ->onDelete('cascade'); // Set foreign key constraint
         });
     }
 
@@ -35,6 +37,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('mahasiswa');
+        Schema::dropIfExists('mahasiswas');
     }
 };

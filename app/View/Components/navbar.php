@@ -5,7 +5,7 @@ namespace App\View\Components;
 use Illuminate\View\Component;
 use Illuminate\Support\Facades\Auth;
 
-class Navbar extends Component
+class navbar extends Component
 {
     public $user;
 

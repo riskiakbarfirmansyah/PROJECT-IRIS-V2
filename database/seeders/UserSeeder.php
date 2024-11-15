@@ -17,7 +17,7 @@ class UserSeeder extends Seeder
         $user = [
             ['name' => 'Aryela', 'email' => 'aryela@gmail.com', 'password' => '12345', 'role' => 'Mahasiswa', 'prodi'=> 'Informatika', 'mhs'=>1, 'status' => 'Non Aktif'],
             ['name' => 'Aryela Rachma Davina', 'email' => 'yela@gmail.com', 'password' => '12345', 'role' => 'Mahasiswa', 'prodi'=> 'Informatika', 'mhs'=>1, 'status' => 'Aktif'],
-            ['name' => 'Indana Najwa Ramadhani', 'email' => 'indananajwagmail.com', 'password' => '12345', 'role' => 'Mahasiswa', 'prodi'=> 'Informatika', 'mhs'=>1, 'status' => 'Aktif'],
+            ['name' => 'Indana Najwa Ramadhani', 'email' => 'indananajwa@gmail.com', 'password' => '12345', 'role' => 'Mahasiswa', 'prodi'=> 'Informatika', 'mhs'=>1, 'status' => 'Aktif'],
             ['name' => 'Muhammad Raja Fadhil Habibi', 'email' => 'rajafadhil@gmail.com', 'password' => '12345', 'role' => 'Mahasiswa', 'prodi'=> 'Informatika', 'mhs'=>1, 'status' => 'Aktif'],
             ['name' => 'Riski Akbar Firmansyah', 'email' => 'riskiakbar@gmail.com', 'password' => '12345', 'role' => 'Mahasiswa', 'prodi'=> 'Informatika', 'mhs'=>1, 'status' => 'Aktif'],
             ['name' => 'indana', 'email' => 'indana@gmail.com', 'password' => '12345', 'role' => 'Pembimbing Akademik', 'prodi' => 'Informatika', 'pa'=>1],

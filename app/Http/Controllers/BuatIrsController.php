@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\dosens;
 use App\Models\Ruang;
 use App\Models\Jadwal;
 use App\Models\Irstest;

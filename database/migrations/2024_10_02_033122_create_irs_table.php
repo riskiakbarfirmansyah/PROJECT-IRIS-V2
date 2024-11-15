@@ -12,17 +12,20 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('irs', function (Blueprint $table) {
-            $table->id();
-            $table->string('kode');
-            $table->string('mata_kuliah');
-            $table->string('kelas');
+            $table->id('id_irs');
+            $table->unsignedBigInteger('mahasiswa_id');
+            $table->string('nama');
+            $table->string('program_studi');
+            $table->integer('semester');            
+            $table->string('tahun_akademik');
+            $table->string('kode_matkul');
+            $table->string('nama_matkul');
             $table->integer('sks');
-            $table->string('ruang');
-            $table->string('status');
-            $table->string('nama_dosen');
-            $table->string('hari_jam');
-            $table->integer('semester');
-            $table->timestamps();
+            $table->boolean('status')->default(0);
+            $table->date('tanggal_pengajuan');
+            $table->date('tanggal_persetujuan')->nullable();
+
+            $table->foreign('mahasiswa_id')->references('nim')->on('mahasiswas');
         });
     }
 
@@ -31,6 +34,10 @@ return new class extends Migration
      */
     public function down(): void
     {
+        Schema::table('irs', function (Blueprint $table) {
+            $table->dropForeign(['mahasiswa_id']);
+        });
+
         Schema::dropIfExists('irs');
     }
 };

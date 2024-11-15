@@ -12,6 +12,7 @@ class Ruang extends Model
     protected $table = 'ruang';
 
     protected $fillable = [
+        'id',
         'noruang',
         'blokgedung',
         'lantai',
